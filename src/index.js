@@ -13,12 +13,13 @@ const counrtyInfo = document.querySelector(".country-info");
 search.addEventListener("input", debounce(onSearchInput, DEBOUNCE_DELAY));
 
 function onSearchInput(evt) {
-    if (!evt.target.value) { 
+    const inputValue = evt.target.value.trim();
+    if (!inputValue) { 
         counrtyInfo.innerHTML = null;
         countryList.innerHTML = null;
         return;
     }
-     fetchCountries(evt.target.value).then(data => {
+     fetchCountries(inputValue).then(data => {
             createMarkup(data)
      })
          .catch(err => {counrtyInfo.innerHTML = null;
