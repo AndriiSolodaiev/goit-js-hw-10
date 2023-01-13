@@ -57,4 +57,4 @@ function createMarkup(arr) {
         counrtyInfo.innerHTML = markupInfo;
         countryList.innerHTML = null;
     }
-    }
+    } 
